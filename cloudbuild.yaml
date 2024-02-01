@@ -1,5 +1,5 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/windy-duality-413000/TicTacToe-2:$SHORT_SHA', '.']
+  args: ['build', '-t', 'gcr.io/TicTacToe-2/tictactoe:$SHORT_SHA', '.']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/windy-duality-413000/TicTacToe-2:$SHORT_SHA']
+  args: ['push', 'gcr.io/TicTacToe-2/tictactoe:$SHORT_SHA']
