@@ -1,0 +1,5 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/TicTacToe-2/TicTacToe-2:$SHORT_SHA', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', '-t', 'gcr.io/TicTacToe-2/TicTacToe-2:$SHORT_SHA']
