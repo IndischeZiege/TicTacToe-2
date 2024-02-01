@@ -3,3 +3,5 @@ steps:
   args: ['build', '-t', 'gcr.io/windy-duality-413000/github.com/indischeziege/tictactoe-2:$SHORT_SHA', '.']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/windy-duality-413000/github.com/indischeziege/tictactoe-2:$SHORT_SHA']
+- name: 'gcr.io/cloud-builder/gcloud'
+  args: ['beta', 'run', 'deploy', 'tictactoe',  '--region=europe-west10', '--platform=managed', '--image=gcr.io/windy-duality-413000/github.com/indischeziege/tictactoe-2:$SHORT_SHA' ]
